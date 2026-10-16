@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>App Launcher</title>
+  <style>
+    :root {
+      --bg: #121212;
+      --card-bg: #1e1e1e;
+      --text: #ffffff;
+      --settings: #374151;
+      --smartswitch: #0284c7;
+      --olauncher: #ea580c;
+      --chrome: #d97706;
+      --assistant: #4f46e5;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 24px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .app-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      text-align: center;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      touch-action: manipulation;
+      transition: filter 0.15s ease, transform 0.1s ease;
+    }
+
+    .app-btn:active {
+      transform: scale(0.97);
+      filter: brightness(0.85);
+    }
+
+    .settings { background-color: var(--settings); }
+    .smartswitch { background-color: var(--smartswitch); }
+    .olauncher { background-color: var(--olauncher); }
+    .chrome { background-color: var(--chrome); }
+    .assistant { background-color: var(--assistant); }
+  </style>
+</head>
+<body>
+
+  <h1>Quick Apps</h1>
+
+  <div class="grid">
+    <!-- Android System Settings -->
+    <a class="app-btn settings" href="intent:#Intent;action=android.settings.SETTINGS;end">
+      Settings
+    </a>
+
+    <!-- Samsung Smart Switch -->
+    <a class="app-btn smartswitch" href="intent://com.sec.android.easyMover/#Intent;scheme=android-app;end">
+      Smart Switch
+    </a>
+
+    <!-- OLauncher -->
+    <a class="app-btn olauncher" href="intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=app.olauncher;end">
+      OLauncher
+    </a>
+
+    <!-- Google Chrome -->
+    <a class="app-btn chrome" href="intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=com.android.chrome;end">
+      Chrome
+    </a>
+
+    <!-- Google Assistant -->
+    <a class="app-btn assistant" href="intent://com.google.android.googlequicksearchbox/#Intent;scheme=android-app;end">
+      Assistant
+    </a>
+  </div>
+
+</body>
+</html>
